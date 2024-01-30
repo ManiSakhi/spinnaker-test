@@ -44,15 +44,15 @@ curl -fsSL get.docker.com -o get-docker.sh
 sh get-docker.sh
 sudo usermod -aG docker ubuntu
 sudo docker run -p 127.0.0.1:9090:9000 -d --name minio1 \
-  -e "MINIO_ACCESS_KEY=AKIAIOSFODNN7EXAMPLE" \
-  -e "MINIO_SECRET_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY" \
+  -e "MINIO_ACCESS_KEY=12e5f0e5c52f56f7b115" \
+  -e "MINIO_SECRET_KEY=cad0456f933e5be23e004cb2cc0f8611ab9538c3 \
   -v /mnt/data:/data \
   minio/minio server /data
 
 sudo apt-get -y install jq
 
-MINIO_SECRET_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-MINIO_ACCESS_KEY=AKIAIOSFODNN7EXAMPLE
+MINIO_SECRET_KEY=cad0456f933e5be23e004cb2cc0f8611ab9538c3
+MINIO_ACCESS_KEY=12e5f0e5c52f56f7b115
 echo $MINIO_SECRET_KEY | hal config storage s3 edit --endpoint http://127.0.0.1:9090 \
     --access-key-id $MINIO_ACCESS_KEY \
     --secret-access-key
